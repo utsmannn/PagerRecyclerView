@@ -26,18 +26,12 @@ public class MyPagerAdapter extends PagerAdapter {
     private List<String> stringList1 = new ArrayList<>();
     private List<String> stringList2 = new ArrayList<>();
 
-    MyPagerAdapter(Context context) {
+    MyPagerAdapter(Context context, List<String> list) {
         this.context = context;
 
-        // add list
-        for (int x = 1; x <= 6; x++){
-            stringList1.add("item page1 " + String.valueOf(x));
-        }
-
-        for (int x = 1; x <= 4; x++) {
-            stringList2.add("item page2 " + String.valueOf(x));
-        }
-
+        // split list
+        stringList1.addAll(list.subList(0, 6));
+        stringList2.addAll(list.subList(6, list.size()));
     }
 
     private List[] lists = new List[]{

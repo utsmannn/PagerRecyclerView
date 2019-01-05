@@ -10,14 +10,23 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    private List<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        for (int x = 1; x <= 10; x++){
+            list.add("item page " + String.valueOf(x));
+        }
+
         ViewPager viewPager = findViewById(R.id.my_viewpager);
-        viewPager.setAdapter(new MyPagerAdapter(this));
+        viewPager.setAdapter(new MyPagerAdapter(this, list));
     }
 }
