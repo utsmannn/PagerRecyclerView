@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // add list 1-10
         for (int x = 1; x <= 10; x++){
-            list.add("item page " + String.valueOf(x));
+            list.add("item " + String.valueOf(x));
         }
 
         ViewPager viewPager = findViewById(R.id.my_viewpager);
